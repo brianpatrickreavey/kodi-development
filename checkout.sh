@@ -9,6 +9,8 @@ repos=(
   auth0-ciam-client
   kodi.script.module.auth0-ciam-client
   kodi.plugin.video.angelstudios
+  kodi.plugin.video.crossfitwod
+  kodi.plugin.video.wodi
   kodi-addon-builder
   repository.kodi.reavey05.com
 )
