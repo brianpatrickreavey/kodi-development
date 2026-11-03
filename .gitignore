@@ -1,0 +1,6 @@
+# Each addon and library is its own git repo. This repo records the process only.
+auth0-ciam-client/
+kodi.script.module.auth0-ciam-client/
+kodi.plugin.video.angelstudios/
+kodi-addon-builder/
+repository.kodi.reavey05.com/
