@@ -14,7 +14,7 @@ https://repository.kodi.reavey05.com/addons.xml lists:
 
 The login zip contains `auth0-ciam-client` tag `v0.2.2`. The video zip does not. A fresh Kodi installed Angel 0.5.8 and its dependencies from this catalog on 2026-11-03 and it worked.
 
-`pyproject.toml` in the login addon pins `auth0-ciam-client.git@v0.2.2`. `pyproject.toml`, `auth0_ciam_client/__init__.py`, and `setup.py` all say 0.2.2. `pyproject.sample.toml` matches the video addon: version 0.5.8, library tag `v0.2.2`, builder tag `v0.4.0`.
+`pyproject.toml` in the login addon pins `auth0-ciam-client.git@v0.2.2`. The library version is `pyproject.toml` and `auth0_ciam_client/__init__.py`, both 0.2.2. Commit `9019186` deleted `setup.py` and `pyproject.sample.toml`. `make build` uses `uv build`.
 
 The changelog inside each addon directory matches the repo-root changelog through the current release. Kodi shows the copy inside the addon directory. The video root changelog also keeps the 0.4.x and older entries. The copy inside `plugin.video.angelstudios/` starts at 0.5.0.
 
@@ -62,5 +62,5 @@ Run `git status` in each checkout. This session left local edits there on purpos
 
 - Action version pins in workflow files, not pushed.
 - `AGENTS.md` and Copilot instruction wording, not pushed.
-- `auth0-ciam-client` is ahead of `origin/master`. Do not push it until Brian asks. A push would also publish `scripts/live_login_check.py`. The other unpushed library commits only align `setup.py` and `pyproject.sample.toml` with 0.2.2.
+- `auth0-ciam-client` is one commit ahead of `origin/master`. That commit adds `scripts/live_login_check.py`. Do not push it until Brian asks.
 - `kodi.plugin.video.angelstudios/tests/unit/test_final_coverage.py` finds the addon directory from the test file instead of a hard-coded path.
