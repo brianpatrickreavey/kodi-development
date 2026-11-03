@@ -22,7 +22,7 @@ The changelog inside each addon directory matches the repo-root changelog throug
 
 The video addon reads Continue Watching and resume position. It has no GraphQL mutation, so it does not write watch progress. Logout clears the local session. It does not revoke the Angel token. Watchlist and Top Picks show an error that they are not available yet. `all_content_menu` does nothing.
 
-`angel_authentication.py` still looks up the cookie name `angel_jwt` when it restores a saved session and when it prints session details. Login itself uses the library cookie list.
+`angel_authentication.py` uses the library cookie list when it restores a saved session and when it prints session details. The order is `angel_jwt_v3`, then `angel_jwt_v2`, then `angel_jwt`. Commit `f6ae252`. CI run `41731854170` passed. Login uses that same list.
 
 A credentialed GraphQL smoke is not built.
 
@@ -39,6 +39,8 @@ The video addon setting **Log authentication steps** is off by default. While it
 Login-addon CI on `master` runs `make test` and `make validate BRANCH=` for Matrix, Nexus, and Omega. `make validate` runs stock `kodi-addon-checker` 0.0.36. Commit `f00c4cf`. Those jobs do not start Kodi.
 
 The catalog workflow downloads the latest GitHub Release of every addon in `repositories-config.yml`. CrossFit and Wodi tags `v0.0.3` have those zips. A missing release or a missing zip fails the job, and the live catalog stays on the previous publish. `CENTRAL_PAT` is deleted. A tag does not publish the catalog.
+
+`AGENTS.md` and the Copilot instructions in the library, login addon, and video addon point at `~/Code/kodi-development/README.md` for ship steps. Commits `6764633`, `308b9eb`, and `04ef373`. CI runs `41731826264`, `41731820402`, and `41731854170` passed.
 
 ## This machine
 
@@ -61,6 +63,5 @@ Restart Kodi if it was open when those directories moved.
 Run `git status` in each checkout. This session left local edits there on purpose:
 
 - Action version pins in workflow files, not pushed.
-- `AGENTS.md` and Copilot instruction wording, not pushed.
 - `auth0-ciam-client` is one commit ahead of `origin/master`. That commit adds `scripts/live_login_check.py`. Do not push it until Brian asks.
 - `kodi.plugin.video.angelstudios/tests/unit/test_final_coverage.py` finds the addon directory from the test file instead of a hard-coded path.
