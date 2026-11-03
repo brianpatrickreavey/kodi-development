@@ -55,7 +55,7 @@ Brian decides when to cut a version. Write the version numbers, push, and wait f
 After that CI is green:
 
 7. Grok pushes the `v*` tag. A library tag was already pushed above. The login-addon tag and the video-addon tag start a release.
-8. GitHub Actions builds the zip and attaches it to the GitHub Release. No call to the catalog.
+8. GitHub Actions builds the zip, unpacks it, and attaches it to the GitHub Release only if that unpack is one addon directory whose `addon.xml` id and version match the tag. The login zip must also contain `auth0_ciam_client/__init__.py`. No call to the catalog. The same unpack check runs in CI on `master` or `main`.
 9. Grok waits until the zip asset is on the release.
 
 Publishing is a separate kickoff. A tag does not do it.
