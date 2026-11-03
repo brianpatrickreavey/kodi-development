@@ -61,7 +61,7 @@ After that CI is green:
 Publishing is a separate kickoff. A tag does not do it.
 
 10. Grok runs `gh workflow run publish-to-gh-pages.yml --repo brianpatrickreavey/repository.kodi.reavey05.com`.
-11. GitHub Actions downloads the latest release zip of every addon in `repositories-config.yml`. It publishes https://repository.kodi.reavey05.com/. The dispatch payload is not what selects the zip.
+11. GitHub Actions downloads the latest release zip of every addon in `repositories-config.yml`. It publishes https://repository.kodi.reavey05.com/. The dispatch payload is not what selects the zip. If any configured addon has no GitHub Release, or its zip is missing, the job fails and the live catalog stays on the previous publish.
 12. Grok watches that run, then checks https://repository.kodi.reavey05.com/addons.xml for the new version.
 13. The other Kodi checks for updates. It installs an addon only when the published `addon.xml` version is higher.
 

@@ -38,7 +38,7 @@ The video addon setting **Log authentication steps** is off by default. While it
 
 Login-addon CI on `master` runs `make test` and `make validate BRANCH=` for Matrix, Nexus, and Omega. Commit `122310d`. Those jobs do not start Kodi.
 
-The catalog workflow downloads the latest GitHub Release of every addon in `repositories-config.yml`. CrossFit and Wodi tags `v0.0.3` have those zips. `CENTRAL_PAT` is deleted. A tag does not publish the catalog.
+The catalog workflow downloads the latest GitHub Release of every addon in `repositories-config.yml`. CrossFit and Wodi tags `v0.0.3` have those zips. A missing release or a missing zip fails the job, and the live catalog stays on the previous publish. `CENTRAL_PAT` is deleted. A tag does not publish the catalog.
 
 ## This machine
 
