@@ -7,6 +7,8 @@ Facts from the session that built this directory. A Grok session started in `~/C
 https://repository.kodi.reavey05.com/addons.xml lists:
 
 - `plugin.video.angelstudios` 0.5.8
+- `plugin.video.crossfitwod` 0.0.3
+- `plugin.video.wodi` 0.0.3
 - `script.module.auth0-ciam-client` 0.0.5
 - `repository.kodi.reavey05.com` 0.1.6
 
@@ -36,7 +38,7 @@ The video addon setting **Log authentication steps** is off by default. While it
 
 Login-addon CI on `master` runs `make test` and `make validate BRANCH=` for Matrix, Nexus, and Omega. Commit `122310d`. Those jobs do not start Kodi.
 
-The catalog workflow downloads the latest GitHub Release of every addon in `repositories-config.yml`. CrossFit and Wodi have no release. Those downloads log 404 and the job still succeeds. `CENTRAL_PAT` is deleted. A tag does not publish the catalog.
+The catalog workflow downloads the latest GitHub Release of every addon in `repositories-config.yml`. CrossFit and Wodi tags `v0.0.3` have those zips. `CENTRAL_PAT` is deleted. A tag does not publish the catalog.
 
 ## This machine
 
@@ -50,7 +52,7 @@ uwsm-app -- kodi --windowing=wayland --audio-backend=pipewire
 
 `uv` 0.13.6 is at `~/.local/bin/uv`. The three Angel project repos have Python 3.12 virtualenvs.
 
-Symlinks in `~/.kodi/addons` point at the Angel and login checkouts in this directory. Checked 2026-11-03 while Kodi was stopped. All three resolve. CrossFit and Wodi are checked out here and are not installed under `~/.kodi/addons`, so they have no symlink.
+Symlinks in `~/.kodi/addons` point at the Angel, login, CrossFit, and Wodi checkouts in this directory. CrossFit and Wodi are linked at the repo root, because `addon.xml` is there. Checked 2026-11-03 while Kodi was stopped. All of them resolve.
 
 Restart Kodi if it was open when those directories moved.
 

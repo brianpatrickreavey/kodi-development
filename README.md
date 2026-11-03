@@ -50,6 +50,7 @@ Brian decides when to cut a version. Write the version numbers, push, and wait f
 - Library change: raise `auth0-ciam-client` `pyproject.toml` and `__init__.py` together. Push tag `vX.Y.Z`. That tag has no release workflow. Then set the login addon `pyproject.toml` pin to that tag and raise its `addon.xml`. Push `master`. Wait for CI.
 - Login-addon change with no library change: raise its `addon.xml`. Push `master`. Wait for CI.
 - Video-addon code change: raise its `addon.xml`. Push `main`. Wait for CI. Update its test pin when the library tag changed. Skip a video-addon tag when the video addon code did not change.
+- CrossFit or Wodi code change: raise its `addon.xml`. Push `main`. Wait for CI. The tag builds the zip. The addon files are at the repo root.
 
 After that CI is green:
 
@@ -66,4 +67,4 @@ Publishing is a separate kickoff. A tag does not do it.
 
 GitHub Actions uses the `GITHUB_TOKEN` for that job. There is no personal access token in the addon repos. If this machine is off at step 10, the GitHub Release still exists and the catalog stays on the old zip.
 
-Last catalog publish recorded here: run `41568823259` put `plugin.video.angelstudios` 0.5.8 and `script.module.auth0-ciam-client` 0.0.5 on the live site. A fresh Kodi installed Angel 0.5.8 and its dependencies from that catalog on 2026-11-03.
+Last catalog publish recorded here: run `41708382489` put `plugin.video.crossfitwod` 0.0.3 and `plugin.video.wodi` 0.0.3 on the live site next to Angel 0.5.8 and the login addon 0.0.5. A fresh Kodi installed Angel 0.5.8 and its dependencies from that catalog on 2026-11-03.
