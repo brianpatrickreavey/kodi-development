@@ -7,7 +7,7 @@ cd ~/Code/kodi-development
 grok
 ```
 
-Grok stores session memory for this repo under `~/.grok/memory-v2/workspaces/`. That folder is not part of this repo. The ship steps below are the copy that a new session can read. Current addon state and this machine's Kodi launch are in [docs/handoff.md](docs/handoff.md).
+Grok stores session memory for this repo under `~/.grok/memory-v2/workspaces/`. That folder is not part of this repo. The ship steps below are the copy that a new session can read. Current addon state and this machine's Kodi launch are in [docs/handoff.md](docs/handoff.md). GitHub issue layout is in [ISSUES.md](ISSUES.md).
 
 `./checkout.sh` clones any repo from [repos.md](repos.md) that is not already here. The checkouts are gitignored. Each one keeps its own commits, branches, and GitHub remote.
 
