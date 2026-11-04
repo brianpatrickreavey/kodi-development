@@ -38,7 +38,7 @@ The video addon setting **Log authentication steps** is off by default. While it
 
 Login-addon CI on `master` runs `make test` and `make validate BRANCH=` for Matrix, Nexus, and Omega. `make validate` runs stock `kodi-addon-checker` 0.0.36. Commit `f00c4cf`. Those jobs do not start Kodi.
 
-Each addon release builds its zip and then unpacks it. The job fails unless the zip is one directory named with the addon id, and `addon.xml` in that directory has the same id and the tag version. The login zip must also contain `resources/lib/auth0_ciam_client/__init__.py`. CI runs that check on push, so a tag is not required to see it fail. Login commit `f0e3405`, video commit `d466746`, CrossFit commit `3b621f4`, Wodi commit `262071b`.
+Each addon release builds its zip and then unpacks it. The job fails unless the zip is one directory named with the addon id, and `addon.xml` in that directory has the same id and the tag version. The login zip must also contain `resources/lib/auth0_ciam_client/__init__.py`. CI runs that check on push, so a tag is not required to see it fail. Login commit `f0e3405`, video commit `d466746`, CrossFit commit `0c7f021`, Wodi commit `179ed6a`. On CrossFit and Wodi, `tools/check_addon_zip.py` and `tools/build_release_zip.sh` are not executable. `kodi-addon-checker` treats an executable file inside those addon trees as an error.
 
 The catalog workflow downloads the latest GitHub Release of every addon in `repositories-config.yml`. CrossFit and Wodi tags `v0.0.3` have those zips. A missing release or a missing zip fails the job, and the live catalog stays on the previous publish. `CENTRAL_PAT` is deleted. A tag does not publish the catalog.
 
