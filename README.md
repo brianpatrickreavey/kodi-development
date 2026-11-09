@@ -67,4 +67,4 @@ Publishing is a separate kickoff. A tag does not do it.
 
 GitHub Actions uses the `GITHUB_TOKEN` for that job. There is no personal access token in the addon repos. If this machine is off at step 10, the GitHub Release still exists and the catalog stays on the old zip.
 
-Last catalog publish recorded here: run `41708382489` put `plugin.video.crossfitwod` 0.0.3 and `plugin.video.wodi` 0.0.3 on the live site next to Angel 0.5.8 and the login addon 0.0.5. A fresh Kodi installed Angel 0.5.8 and its dependencies from that catalog on 2026-11-03.
+Last catalog publish recorded here: run `42543740529` put Angel 0.5.9 on the live site next to CrossFit 0.0.3, Wodi 0.0.3, and the login addon 0.0.5. A fresh Kodi installed Angel 0.5.8 and its dependencies from the previous catalog on 2026-11-03.

@@ -6,13 +6,13 @@ Facts from the session that built this directory. A Grok session started in `~/C
 
 https://repository.kodi.reavey05.com/addons.xml lists:
 
-- `plugin.video.angelstudios` 0.5.8
+- `plugin.video.angelstudios` 0.5.9
 - `plugin.video.crossfitwod` 0.0.3
 - `plugin.video.wodi` 0.0.3
 - `script.module.auth0-ciam-client` 0.0.5
 - `repository.kodi.reavey05.com` 0.1.6
 
-The login zip contains `auth0-ciam-client` tag `v0.2.2`. The video zip does not. A fresh Kodi installed Angel 0.5.8 and its dependencies from this catalog on 2026-11-03 and it worked.
+The login zip contains `auth0-ciam-client` tag `v0.2.2`. The video zip does not. A fresh Kodi installed Angel 0.5.8 and its dependencies from this catalog on 2026-11-03 and it worked. Catalog run `42543740529` published Angel 0.5.9 on 2026-11-08. That release stops requesting `primaryFlowPhases`.
 
 `pyproject.toml` in the login addon pins `auth0-ciam-client.git@v0.2.2`. The library version is `pyproject.toml` and `auth0_ciam_client/__init__.py`, both 0.2.2. Commit `9019186` deleted `setup.py` and `pyproject.sample.toml`. `make build` uses `uv build`.
 
