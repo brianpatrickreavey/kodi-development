@@ -44,10 +44,12 @@ That command raises `addon.xml`, both changelogs, `pyproject.toml`, and `uv.lock
 
 Repeat steps 1–6 for other work. Do not tag. Do not raise `addon.xml` on every push.
 
+Commits go on a feature branch. A push to `main` or `master` needs an explicit yes. The only exception is the release version bump: `scripts/publish-video-addon.sh` commits that version on the video addon's `main` and pushes it, and the same version-number commit is the direct push for the login addon, CrossFit, Wodi, and the library when their release is cut.
+
 1. Brian says what to change.
 2. Grok edits the repo that owns the change.
 3. Grok checks it on this Kodi through the symlink when the change is user-visible.
-4. Grok commits and pushes `master` or `main`.
+4. Grok commits on a feature branch and pushes that branch. Pushing `main` or `master` waits for an explicit yes, unless this is the release version bump.
 5. GitHub Actions runs that repo's CI.
 6. Grok watches the run. A failed run stops here.
 

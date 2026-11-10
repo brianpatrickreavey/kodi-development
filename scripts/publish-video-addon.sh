@@ -5,6 +5,8 @@
 #   scripts/publish-video-addon.sh 0.6.1 "One sentence of release news."
 #
 # The video-addon checkout must be on main, match origin/main, and have no local edits.
+# The version bump commit is the one direct push to main. Every other change stays on
+# a feature branch until Brian explicitly says to push it to main.
 # The script raises the version, pushes main, waits for CI, tags vX.Y.Z, waits for the
 # GitHub Release zip, then runs the catalog workflow. That catalog run publishes the
 # latest GitHub Release of every addon in repositories-config.yml.
