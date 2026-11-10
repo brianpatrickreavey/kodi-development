@@ -34,7 +34,15 @@ Restart Kodi on this machine after the symlinks change.
 
 ## Ship
 
-Repeat steps 1–6. Do not tag. Do not raise `addon.xml` on every push.
+Publish the video addon from a clean `main` checkout:
+
+```sh
+scripts/publish-video-addon.sh 0.6.1 "One sentence of release news."
+```
+
+That command raises `addon.xml`, both changelogs, `pyproject.toml`, and `uv.lock`. It pushes `main`, waits for CI, tags `v0.6.1`, waits for the GitHub Release zip, then runs the catalog workflow and checks `addons.xml`. The catalog run publishes the latest GitHub Release of every addon in `repositories-config.yml`.
+
+Repeat steps 1–6 for other work. Do not tag. Do not raise `addon.xml` on every push.
 
 1. Brian says what to change.
 2. Grok edits the repo that owns the change.
@@ -67,4 +75,4 @@ Publishing is a separate kickoff. A tag does not do it.
 
 GitHub Actions uses the `GITHUB_TOKEN` for that job. There is no personal access token in the addon repos. If this machine is off at step 10, the GitHub Release still exists and the catalog stays on the old zip.
 
-Last catalog publish recorded here: run `42543740529` put Angel 0.5.9 on the live site next to CrossFit 0.0.3, Wodi 0.0.3, and the login addon 0.0.5. A fresh Kodi installed Angel 0.5.8 and its dependencies from the previous catalog on 2026-11-03.
+Last catalog publish recorded here: run `42739701353` put Angel 0.6.0 on the live site next to CrossFit 0.0.3, Wodi 0.0.3, and the login addon 0.0.5.
